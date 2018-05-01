@@ -6,9 +6,7 @@ Spring Boot tester...
 ## Kafka
 You'll need Kafka installed, from [Apache Kafka](https://kafka.apache.org/quickstart)
 
-The scripts assume a Mac and `/Applications/kafka_2.11-1.0.0`
-
-Later versions, such as 1.1.0 haven't been tried but should be ok.
+The scripts assume a Mac and the latest version available today (`/Applications/kafka_2.11-1.1.0`). Have also been tested on Kafka 2.11-1.0.0 so the version shouldn't been too important so long as it's reasonably new.
 
 ## In `src/main/scripts`
 

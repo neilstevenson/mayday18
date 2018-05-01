@@ -1,5 +1,5 @@
 #!/bin/sh
-cd /Applications/kafka_2.11-1.0.0/bin
+cd /Applications/kafka_2.11-1.1.0/bin
 
 # Run with "localhost" so Kafka is available when laptop has no network
 ./kafka-server-start.sh ../config/server.properties \
