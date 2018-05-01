@@ -18,6 +18,8 @@ Run `start-kafka-0.sh`, `start-kafka-1.sh` and `start-kafka-2.sh` to start three
 
 Run `print-topic.sh` to create a partitioned (into 3) Kafka topic, and to listen for messages being written to the topic
 
+Run `print-topic-2.sh` to create another partitioned (into 3) Kafka topic, and to listen for messages being written to the topic, and keep this running.
+
 ## Populate Kafka
 
 Run 
@@ -62,7 +64,10 @@ Starts and stop variation 1 of the ingest job (Kafka -> Imap)
 
 Starts and stop variation 1 of the ingest job (Kafka -> Imap)
 
-* `EGEST_START` & `EGEST_STOP`
+* `EGEST1_START` & `EGEST1_STOP`
 
-Starts ands stops the job that should read from IMap chamnge history and write to Kafka. The second half of this
-is not yet implemented, it just writes to the screen instead.
+Starts ands stops the job that reads from IMap and writes to the screen
+
+* `EGEST2_START` & `EGEST2_STOP`
+
+Starts ands stops the job that reads from IMap and writes to a Kafka topic

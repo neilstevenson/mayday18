@@ -116,9 +116,9 @@ public class MyCLI {
     }
 
     // START Requests
-    @ShellMethod(key = "EGEST_START", value = "Start 'kafka' output job")
-    public String egestStart() {
-        String noun = Constants.COMMAND_NOUN_EGEST;
+    @ShellMethod(key = "EGEST1_START", value = "Start fake 'kafka' output job")
+    public String egest1Start() {
+        String noun = Constants.COMMAND_NOUN_EGEST1;
 
         List<String> params = new ArrayList<>();
         params.add(Constants.COMMAND_VERB_START);
@@ -126,6 +126,18 @@ public class MyCLI {
         this.commandMap.put(noun, params);
 
         return String.format("Requested %s job '%s'", params.get(0), noun);
+    }
+    @ShellMethod(key = "EGEST2_START", value = "Start real 'kafka' output job")
+    public String egest2Start() {
+        String noun = Constants.COMMAND_NOUN_EGEST2;
+
+        List<String> params = new ArrayList<>();
+        params.add(Constants.COMMAND_VERB_START);
+        params.add(this.bootstrapServers);
+
+        this.commandMap.put(noun, params);
+
+        return String.format("Requested %s job '%s' with %s", params.get(0), noun, params.get(1));
     }
     @ShellMethod(key = "INGEST1_START", value = "Start simple Kafka input job")
     public String ingest1Star() {
@@ -153,9 +165,20 @@ public class MyCLI {
     }
 
     // STOP Requests
-    @ShellMethod(key = "EGEST_STOP", value = "Stop 'kafka' output job")
-    public String egestStop() {
-        String noun = Constants.COMMAND_NOUN_EGEST;
+    @ShellMethod(key = "EGEST1_STOP", value = "Stop 'kafka' output job")
+    public String egest1Stop() {
+        String noun = Constants.COMMAND_NOUN_EGEST1;
+
+        List<String> params = new ArrayList<>();
+        params.add(Constants.COMMAND_VERB_STOP);
+
+        this.commandMap.put(noun, params);
+
+        return String.format("Requested %s job '%s'", params.get(0), noun);
+    }
+    @ShellMethod(key = "EGEST2_STOP", value = "Stop 'kafka' output job")
+    public String egest2Stop() {
+        String noun = Constants.COMMAND_NOUN_EGEST2;
 
         List<String> params = new ArrayList<>();
         params.add(Constants.COMMAND_VERB_STOP);

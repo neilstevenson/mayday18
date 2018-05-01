@@ -41,7 +41,7 @@ public class ApplicationConfig {
 
 		KafkaTemplate<String, Fx> kafkaTemplate = new KafkaTemplate<>(producerFactory);
 				
-		kafkaTemplate.setDefaultTopic(Constants.TOPIC_NAME);
+		kafkaTemplate.setDefaultTopic(Constants.TOPIC_NAME_FX);
 		
 		return kafkaTemplate;
 	}

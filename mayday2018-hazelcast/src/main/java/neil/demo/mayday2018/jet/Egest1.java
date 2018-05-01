@@ -12,7 +12,7 @@ import com.hazelcast.map.journal.EventJournalMapEvent;
 import neil.demo.mayday2018.Constants;
 import neil.demo.mayday2018.Fx;
 
-public class Egest {
+public class Egest1 {
 	
     private static final DistributedPredicate<EventJournalMapEvent<String, Fx>>
         NO_SELECTION_FILTER = DistributedFunctions.alwaysTrue();

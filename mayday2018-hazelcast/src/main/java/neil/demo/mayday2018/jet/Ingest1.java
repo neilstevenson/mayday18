@@ -36,7 +36,7 @@ public class Ingest1 {
         Pipeline pipeline = Pipeline.create();
         
         pipeline
-        .drawFrom(KafkaSources.kafka(properties, Constants.TOPIC_NAME))
+        .drawFrom(KafkaSources.kafka(properties, Constants.TOPIC_NAME_FX))
         .drainTo(Sinks.map(Constants.IMAP_NAME_FX));
         ;
                 

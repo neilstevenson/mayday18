@@ -41,7 +41,7 @@ public class Ingest2 {
         
         pipeline
         // Source gives a Map.Entry
-        .drawFrom(KafkaSources.kafka(properties, Constants.TOPIC_NAME))
+        .drawFrom(KafkaSources.kafka(properties, Constants.TOPIC_NAME_FX))
         // Sink merges into Map.Entry with same key using a separate method
         .drainTo(
                 Sinks.mapWithEntryProcessor(

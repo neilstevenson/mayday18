@@ -10,7 +10,8 @@ import com.hazelcast.map.listener.EntryAddedListener;
 import com.hazelcast.map.listener.EntryUpdatedListener;
 
 import lombok.extern.slf4j.Slf4j;
-import neil.demo.mayday2018.jet.Egest;
+import neil.demo.mayday2018.jet.Egest1;
+import neil.demo.mayday2018.jet.Egest2;
 import neil.demo.mayday2018.jet.Ingest1;
 import neil.demo.mayday2018.jet.Ingest2;
 
@@ -135,8 +136,11 @@ public class CommandListener implements EntryAddedListener<String, List<String>>
     	JobConfig jobConfig = new JobConfig();
     	jobConfig.setName(noun);
     	
-    	if (noun.equals(Constants.COMMAND_NOUN_EGEST)) {
-    		pipeline = Egest.build();
+    	if (noun.equals(Constants.COMMAND_NOUN_EGEST1)) {
+    		pipeline = Egest1.build();
+    	}
+    	if (noun.equals(Constants.COMMAND_NOUN_EGEST2)) {
+    		pipeline = Egest2.build(params);
     	}
     	if (noun.equals(Constants.COMMAND_NOUN_INGEST1)) {
     		pipeline = Ingest1.build(params);
