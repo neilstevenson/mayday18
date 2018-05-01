@@ -1,0 +1,6 @@
+**/.classpath
+**/.project
+**/.settings
+**/.springBeans
+**/target
+spring-shell.log

@@ -1,0 +1,2 @@
+# Kafka servers. Best not to have only one and best not to use the same host
+bootstrap-servers: 127.0.0.1:9092,127.0.0.1:9093,127.0.0.1:9094

@@ -1,0 +1,12 @@
+usd,eur,0.83
+usd,gbp,0.73
+usd,chf,0.99
+chf,gbp,0.74
+usd,eur,0.84
+usd,eur,0.85
+usd,eur,0.84
+usd,eur,0.85
+chf,gbp,0.74
+usd,eur,0.85
+usd,eur,0.86
+usd,eur,0.87
