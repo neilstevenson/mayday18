@@ -15,7 +15,7 @@
 	<packaging>pom</packaging>
 
 	<properties>
-		<hazelcast-jet.version>0.6</hazelcast-jet.version>
+		<hazelcast-jet.version>0.6.1</hazelcast-jet.version>
 		<java.version>1.8</java.version>
 		<kafka_2.11.version>1.0.0</kafka_2.11.version>
 		<spring-shell.version>2.0.0.RELEASE</spring-shell.version>
