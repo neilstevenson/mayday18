@@ -32,11 +32,17 @@ public class MyQuit implements Quit.Command {
                 if (this.jetInstance.getHazelcastInstance().getLifecycleService().isRunning()) {
                         List<Job> jobs = this.jetInstance.getJobs();
                         
+                        boolean canQuit = true;
+                        
                         for (Job job : jobs) {
                                 if (job.getStatus() == JobStatus.RUNNING) {
                                         log.error("Cannot stop, job still running '{}'", job);
-                                        return;
+                                        canQuit = false;
                                 }
+                        }
+                        
+                        if (!canQuit) {
+                        	return;
                         }
                         
                         this.jetInstance.shutdown();

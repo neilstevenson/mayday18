@@ -1,55 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 
-	<appender name="SYSOUT_BLUE" class="ch.qos.logback.core.ConsoleAppender">
-		<encoder>
-			<pattern>%d{HH:mm:ss.SSS} %highlight(%-5level) %thread %white(%logger{40}) - %blue(%msg) %n</pattern>
-		</encoder>
-	</appender>
-	<appender name="SYSOUT_CYAN" class="ch.qos.logback.core.ConsoleAppender">
-		<encoder>
-			<pattern>%d{HH:mm:ss.SSS} %highlight(%-5level) %thread %white(%logger{40}) - %cyan(%msg) %n</pattern>
-		</encoder>
-	</appender>
-	<appender name="SYSOUT_MAGENTA" class="ch.qos.logback.core.ConsoleAppender">
-		<encoder>
-			<pattern>%d{HH:mm:ss.SSS} %highlight(%-5level) %thread %white(%logger{40}) - %magenta(%msg) %n</pattern>
-		</encoder>
-	</appender>
-	<appender name="SYSOUT_RED" class="ch.qos.logback.core.ConsoleAppender">
-		<encoder>
-			<pattern>%d{HH:mm:ss.SSS} %highlight(%-5level) %thread %white(%logger{40}) - %red(%msg) %n</pattern>
-		</encoder>
-	</appender>
-	<appender name="SYSOUT_YELLOW" class="ch.qos.logback.core.ConsoleAppender">
-		<encoder>
-			<pattern>%d{HH:mm:ss.SSS} %highlight(%-5level) %thread %white(%logger{40}) - %yellow(%msg) %n</pattern>
-		</encoder>
-	</appender>
+    <appender name="SYSOUT_BLUE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %highlight(%-5level) %thread %white(%logger{40}) - %blue(%msg) %n</pattern>
+        </encoder>
+    </appender>
+    <appender name="SYSOUT_BOLD_BLUE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %highlight(%-5level) %thread %white(%logger{40}) - %boldBlue(%msg) %n</pattern>
+        </encoder>
+    </appender>
+    <appender name="SYSOUT_CYAN" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %highlight(%-5level) %thread %white(%logger{40}) - %cyan(%msg) %n</pattern>
+        </encoder>
+    </appender>
+    <appender name="SYSOUT_GRAY" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %highlight(%-5level) %thread %white(%logger{40}) - %gray(%msg) %n</pattern>
+        </encoder>
+    </appender>
+    <appender name="SYSOUT_GREEN" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %highlight(%-5level) %thread %white(%logger{40}) - %green(%msg) %n</pattern>
+        </encoder>
+    </appender>
+    <appender name="SYSOUT_MAGENTA" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %highlight(%-5level) %thread %white(%logger{40}) - %magenta(%msg) %n</pattern>
+        </encoder>
+    </appender>
+    <appender name="SYSOUT_RED" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %highlight(%-5level) %thread %white(%logger{40}) - %red(%msg) %n</pattern>
+        </encoder>
+    </appender>
+    <appender name="SYSOUT_WHITE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %highlight(%-5level) %thread %white(%logger{40}) - %white(%msg) %n</pattern>
+        </encoder>
+    </appender>
+    <appender name="SYSOUT_YELLOW" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %highlight(%-5level) %thread %white(%logger{40}) - %yellow(%msg) %n</pattern>
+        </encoder>
+    </appender>
 
-	<!-- A selection of Hazelcast system messages, "com.hazelcast" at INFO is 
-		default -->
-	<logger name="com.hazelcast.core" level="info" additivity="false">
-		<appender-ref ref="SYSOUT_CYAN" />
-	</logger>
-	<logger name="com.hazelcast.jet" level="info" additivity="false">
-		<appender-ref ref="SYSOUT_MAGENTA" />
-	</logger>
-	<logger name="com.hazelcast.internal.cluster" level="info"
-		additivity="false">
-		<appender-ref ref="SYSOUT_BLUE" />
-	</logger>
-	<logger name="com.hazelcast.nio" level="info" additivity="false">
-		<appender-ref ref="SYSOUT_BLUE" />
-	</logger>
-
-	<!-- Code for the sample -->
-	<logger name="neil.demo" level="debug" additivity="false">
-		<appender-ref ref="SYSOUT_YELLOW" />
-	</logger>
-
-	<!-- Default -->
-	<root level="error">
-		<appender-ref ref="SYSOUT_RED" />
-	</root>
+        <!-- A selection of Hazelcast system messages, "com.hazelcast" at INFO is default -->
+    <logger name="com.hazelcast.core" level="info" additivity="false">
+        <appender-ref ref="SYSOUT_CYAN"/>
+    </logger>
+    <logger name="com.hazelcast.client.spi" level="info" additivity="false">
+        <appender-ref ref="SYSOUT_GREEN"/>
+    </logger>
+    <logger name="com.hazelcast.internal.cluster" level="info" additivity="false">
+        <appender-ref ref="SYSOUT_YELLOW"/>
+    </logger>
+    <logger name="com.hazelcast.jet" level="info" additivity="false">
+        <appender-ref ref="SYSOUT_BLUE"/>
+    </logger>
+    <logger name="com.hazelcast.jet.impl.JetService" level="info" additivity="false">
+        <appender-ref ref="SYSOUT_YELLOW"/>
+    </logger>
+    <logger name="com.hazelcast.jet.impl" level="info" additivity="false">
+        <appender-ref ref="SYSOUT_GREEN"/>
+    </logger>
+    <logger name="com.hazelcast.nio" level="info" additivity="false">
+        <appender-ref ref="SYSOUT_GREEN"/>
+    </logger>
+    
+    <!-- Code for the sample -->
+    <logger name="neil.demo" level="trace" additivity="false">
+        <appender-ref ref="SYSOUT_WHITE"/>
+    </logger>
+    
+    <!-- Webapp port -->
+    <logger name="org.springframework.boot.web.embedded" level="info" additivity="false">
+        <appender-ref ref="SYSOUT_MAGENTA"/>
+    </logger>
+    
+    <!-- Default -->
+    <root level="error">
+        <appender-ref ref="SYSOUT_RED"/>
+    </root>
 </configuration>

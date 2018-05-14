@@ -15,6 +15,7 @@ import com.hazelcast.core.IMap;
 import com.hazelcast.jet.Jet;
 import com.hazelcast.jet.JetInstance;
 import com.hazelcast.jet.Job;
+import com.hazelcast.jet.core.JobStatus;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -208,6 +209,31 @@ public class MyCLI {
         this.commandMap.put(noun, params);
 
         return String.format("Requested %s job '%s'", params.get(0), noun);
+    }
+
+    @ShellMethod(key = "STOP_ALL", value = "Stap all running jobs")
+    public String stopAll() {
+        List<String> params = new ArrayList<>();
+        params.add(Constants.COMMAND_VERB_STOP);
+
+        int count=0;
+        
+        String result = "";
+        
+		for (Job job : this.jetInstance.getJobs()) {
+			if (job.getStatus() == JobStatus.RUNNING) {
+		        String noun = job.getName();
+
+		        this.commandMap.put(noun, params);
+
+		        result += String.format("Requested %s job '%s'%n", params.get(0), noun);
+		        count++;
+			}
+		}
+
+		result += String.format("Requested %d job%s be stopped", count, (count==1 ? "" : "s"));
+		
+		return result;
     }
 
 }
