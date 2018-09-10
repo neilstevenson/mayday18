@@ -16,6 +16,7 @@
 
 	<properties>
 		<hazelcast-jet.version>0.6.1</hazelcast-jet.version>
+		<hazelcast-jet.version>0.7-SNAPSHOT</hazelcast-jet.version>
 		<java.version>1.8</java.version>
 		<kafka_2.11.version>1.0.0</kafka_2.11.version>
 		<spring-shell.version>2.0.0.RELEASE</spring-shell.version>
@@ -27,12 +28,16 @@
 		<module>mayday2018-kafka</module>
 	</modules>
 
-
 	<dependencies>
 		<dependency>
 			<groupId>com.hazelcast.jet</groupId>
 			<artifactId>hazelcast-jet-kafka</artifactId>
 			<version>${hazelcast-jet.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.cache</groupId>
+			<artifactId>cache-api</artifactId>
 		</dependency>
 
 		<dependency>
@@ -77,5 +82,17 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+
+    <repositories>   
+        <repository>
+            <id>Hazelcast Public Snapshot Repository</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <!-- Minutes -->
+                <updatePolicy>interval:720</updatePolicy>
+            </snapshots>
+        </repository>
+    </repositories>   
 
 </project>

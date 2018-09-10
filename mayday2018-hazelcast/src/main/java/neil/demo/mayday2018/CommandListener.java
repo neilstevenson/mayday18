@@ -178,12 +178,9 @@ public class CommandListener implements EntryAddedListener<String, List<String>>
         	log.info("Ignoring stop '{}' request, job id {} has status {}",
         			noun, job.getId(), job.getStatus());
         } else {
-        	if (!job.cancel()) {
-        		throw new RuntimeException(String.format("Job '%s' cancel failed: %s", noun, job));
-        	} else {
-        		log.info("Stop request for '{}' : requested : job {}", 
+        	job.cancel();
+        	log.info("Stop request for '{}' : requested : job {}", 
         				noun, job.getId());
-            }
      	}
     }
 }

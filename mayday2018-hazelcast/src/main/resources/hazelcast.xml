@@ -4,6 +4,14 @@
 	xmlns="http://www.hazelcast.com/schema/config"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
+	<group>
+		<name>jet</name>
+		<password>jet-pass</password>
+	</group>
+
+	<management-center enabled="true">http://localhost:8080/hazelcast-mancenter
+	</management-center>
+
 	<network>
 		<join>
 			<multicast enabled="false" />
